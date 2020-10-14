@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar produto {% endblock %}
+
+{% block main %}
+    <h3>Edição de produto</h3>
+    <form  method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button type="submit">Enviar</button>
+        <a href="{% url 'produto_list'%}">Voltar</a>
+    </form>
+    
+   
+{% endblock %}

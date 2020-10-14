@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Cadastro produto {% endblock %}
+
+{% block main %}
+
+    <h3>Cadastro de produtos</h3>
+
+    <form action="{% url 'produto_new'%}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+    
+        <button type="submit">Salvar</button>
+        <a href="{% url 'produto_list' %}">Voltar</a>
+    </form>
+
+{% endblock %}
